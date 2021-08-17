@@ -12,9 +12,9 @@
 
 // user interface
 
-$(document).ready(Function() {
+$(document).ready(function() {
   $("form#grocList").submit(function(event){
-    event.preventdefault();
+    event.preventDefault();
 
     const food1 = $("input#item1").val();
     const food2 = $("input#item2").val();
