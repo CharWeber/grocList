@@ -12,8 +12,8 @@
 
 // user interface
 
-$(document).ready(Function(event){
-  $("#grocList").submit(function(){
+$(document).ready(Function() {
+  $("form#grocList").submit(function(event){
     event.preventdefault();
 
     const food1 = $("input#item1").val();
@@ -27,7 +27,10 @@ $(document).ready(Function(event){
     let finalList = grocAr.map(function(food){
       return food.charAt(0).toUpperCase() + food.slice(1);
       });
-    })
-    console.log(finalList);
+    finalList.forEach(function(food){
+      $("ul#output").append("<li>" + food + "</li>")
+    });
+    $("#survey").fadeOut();
+    $("#finList").fadeIn();
   });
 });
